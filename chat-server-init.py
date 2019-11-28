@@ -1,7 +1,10 @@
 # Python Socket Programming Done By : Palash Roy and MD Moniruzzaman
 #!/usr/bin/env python3
+<<<<<<< HEAD
 
 """Server for multithreaded (asynchronous) chat application."""
+=======
+>>>>>>> update1
 from socket import AF_INET, socket, SOCK_STREAM
 from threading import Thread
 
@@ -14,11 +17,20 @@ def accept_incoming_connections():
         client.send(bytes("Welcome to live chat!! Type your name and press Enter!!", "utf8"))
         addresses[client] = client_address
         Thread(target=handle_client, args=(client,)).start()
+<<<<<<< HEAD
 
+=======
+>>>>>>> update1
 
 def handle_client(client):  # Takes client socket as argument.
     """Handles a single client connection."""
 
+<<<<<<< HEAD
+=======
+def handle_client(client):  # Takes client socket as argument.
+    """Handles a single client connection."""
+
+>>>>>>> update1
     name = client.recv(BUFSIZ).decode("utf8")
     welcome = 'Welcome %s! If you want to quit, please type {quit} to exit.' % name
     client.send(bytes(welcome, "utf8"))
